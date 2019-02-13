@@ -1,19 +1,22 @@
 const express = require('express');
+const routes = require('./routes/api');
 const bodyParse = require('body-parser');
 const mongoose = require('mongoose');
-const routes = require('./routes/api');
- 
+
 // set up express app
+
 const app = express();
 
 //connect to mongodb
-mongoose.connect('mongodb://localhost/ninjago', { useNewUrlParser: true });
+mongoose.connect('mongodb://locaclhost/ninjago', { useNewUrlParser: true });
 mongoose.Promise = global.Promise;
 
-app.use(bodyParse.json());  
- 
-// initialize routes
+app.use(bodyParse.json()); 
+
+// initialize routes 
 app.use('/api', routes)
+
+
 
 // listen fro request 
 
