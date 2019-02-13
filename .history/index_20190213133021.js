@@ -6,7 +6,7 @@ const app = express();
 
 app.get('/', function(req, res){
   console.log('GET request');
-  res.send({ name: 'Yoshi'});
+  res.end();
 })
 
 // listen fro request

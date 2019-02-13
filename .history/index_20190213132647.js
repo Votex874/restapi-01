@@ -4,13 +4,12 @@ const express = require('express');
 
 const app = express();
 
-app.get('/', function(req, res){
-  console.log('GET request');
-  res.send({ name: 'Yoshi'});
+app.get('/', function(){
+  console.log('GET request')
 })
 
 // listen fro request
 
-app.listen(process.env.port || 5000, function () {
+app.listen(process.env.port || 4000, function () {
   console.log('now listening for requests');
 });
