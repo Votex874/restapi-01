@@ -18,6 +18,7 @@
   },
   "homepage": "https://github.com/Votex874/restapi-01#readme",
   "dependencies": {
+    "body-parser": "^1.18.3",
     "express": "^4.16.4"
   },
   "devDependencies": {
