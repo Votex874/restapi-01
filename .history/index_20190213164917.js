@@ -13,7 +13,7 @@ mongoose.Promise = global.Promise;
 app.use(bodyParse.json());  
  
 // initialize routes
-app.use('/api', routes) 
+app.use('/api', routes)
 
 //error handling middleware
 app.use( (err, req, res, next) => {
