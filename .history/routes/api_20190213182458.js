@@ -5,10 +5,13 @@ const Ninja = require('../models/ninja');
 // get a list of ninjas from the db
 router.get('/ninjas', function (req, res, next) {
   Ninja.aggregate().near({
-    near: [parseFloat(req.query.lng), parseFloat(req.query.lat)],
+    near: {
+      'type': 'Point',
+      'coordinates': [parseFloat(req.query.lng), parseFloat(req.query.lat)]
+    },
     maxDistance: 100000,
     spherical: true,
-    distanceField: "dist.calculated"
+    distanceField: "dis"
   })﻿.then( ninjas => {
     res.send(ninjas);
   }) 
