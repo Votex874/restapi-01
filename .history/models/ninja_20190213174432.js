@@ -6,14 +6,16 @@ const Schema = mongoose.Schema;
 
 const GeoSchema = new Schema({
   type: {
-    type: String,
+    type: String
     default: "Point",
   },
-  coordinates: {
-    type: [Number],
-    index: "2dsphere"
-  },
+  coordinates: {},
 })
+
+"geometry": {
+  "type": "Point",
+    "coordinates": [125.6, 10.1]
+}
 
 // create ninja Schema & model
 const NinjaSchema = new Schema({

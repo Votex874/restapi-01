@@ -15,6 +15,11 @@ const GeoSchema = new Schema({
   },
 })
 
+"geometry": {
+  "type": "Point",
+    "coordinates": [125.6, 10.1]
+}
+
 // create ninja Schema & model
 const NinjaSchema = new Schema({
   name: { 
