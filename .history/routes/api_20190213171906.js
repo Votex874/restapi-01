@@ -6,7 +6,7 @@ const Ninja = require('../models/ninja');
 router.get('/ninjas', function (req, res, next) {
   res.send({ type: 'GET' });
 });
- 
+
 // add a new ninja to the db
 router.post('/ninjas', function (req, res, next) {
   Ninja.create(req.body).then(function (ninja) {
@@ -21,9 +21,8 @@ router.put('/ninjas/:id', function (req, res, next) {
 
 // delete a ninja from the db
 router.delete('/ninjas/:id', function (req, res, next) {
-  Ninja.findByIdAndRemove({_id: req.params.id}).then( (ninja) => {
-    res.send(ninja)
-  })
+  Ninja.findByIdAndRemove({_id: req.params.id})
+  res.send({ type: 'DELETE' });
 });
 
 module.exports = router;
