@@ -5,7 +5,7 @@ const routes = require('./routes/api')
 
 const app = express();
 
-app.use('/api', routes)
+app.use(routes)
 
 
 
